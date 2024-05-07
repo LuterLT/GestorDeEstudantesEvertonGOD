@@ -21,5 +21,10 @@ namespace GestorDeEstudantesT7EvertonGOD_VS
         {
 
         }
+
+        private void buttonLogin_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
