@@ -67,6 +67,7 @@
             // 
             this.textBoxSenha.Location = new System.Drawing.Point(172, 222);
             this.textBoxSenha.Name = "textBoxSenha";
+            this.textBoxSenha.PasswordChar = '*';
             this.textBoxSenha.Size = new System.Drawing.Size(186, 20);
             this.textBoxSenha.TabIndex = 2;
             // 
@@ -90,6 +91,7 @@
             this.buttonCancelar.TabIndex = 4;
             this.buttonCancelar.Text = "Cancelar";
             this.buttonCancelar.UseVisualStyleBackColor = true;
+            this.buttonCancelar.Click += new System.EventHandler(this.buttonCancelar_Click);
             // 
             // imageList1
             // 
