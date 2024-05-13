@@ -16,7 +16,18 @@ namespace GestorDeEstudantesT7EvertonGOD_VS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Login_Form());
+            //Application.Run(new Login_Form());
+            
+            Login_Form formLogin = new Login_Form();
+
+            if (formLogin.ShowDialog() == DialogResult.OK)
+            {
+                Application.Run(new FormPrincipal());
+            }
+            else
+            { 
+                Application.Exit();
+            }
         }
     }
 }

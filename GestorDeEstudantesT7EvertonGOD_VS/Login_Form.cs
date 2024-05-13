@@ -41,7 +41,7 @@ namespace GestorDeEstudantesT7EvertonGOD_VS
 
             if (tabelaDeDados.Rows.Count > 0)
             {
-                MessageBox.Show("SIM");
+                this.DialogResult = DialogResult.OK;
             }
             else
             {
