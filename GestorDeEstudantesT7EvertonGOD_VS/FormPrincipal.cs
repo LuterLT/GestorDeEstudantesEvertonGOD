@@ -26,5 +26,36 @@ namespace GestorDeEstudantesT7EvertonGOD_VS
         {
 
         }
+
+        private void novoEstudanteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormInserirEstudante formInserirEstudante = new FormInserirEstudante();
+            formInserirEstudante.Show(this);
+        }
+
+        private void listaDeEstudanteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void estatísticasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void editarRemoverToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gerenciarEstudantesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void imprimirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
