@@ -37,8 +37,8 @@
             this.dateTimePickerNascimento = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButtonFeminino = new System.Windows.Forms.RadioButton();
+            this.radioButtonMasculino = new System.Windows.Forms.RadioButton();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -122,38 +122,38 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.radioButton2);
-            this.groupBox1.Controls.Add(this.radioButton1);
+            this.groupBox1.Controls.Add(this.radioButtonFeminino);
+            this.groupBox1.Controls.Add(this.radioButtonMasculino);
             this.groupBox1.Location = new System.Drawing.Point(136, 288);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(211, 47);
             this.groupBox1.TabIndex = 15;
             this.groupBox1.TabStop = false;
             // 
-            // radioButton1
+            // radioButtonFeminino
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.ForeColor = System.Drawing.Color.White;
-            this.radioButton1.Location = new System.Drawing.Point(15, 19);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(73, 17);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Masculino";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButtonFeminino.AutoSize = true;
+            this.radioButtonFeminino.ForeColor = System.Drawing.Color.White;
+            this.radioButtonFeminino.Location = new System.Drawing.Point(123, 19);
+            this.radioButtonFeminino.Name = "radioButtonFeminino";
+            this.radioButtonFeminino.Size = new System.Drawing.Size(67, 17);
+            this.radioButtonFeminino.TabIndex = 1;
+            this.radioButtonFeminino.TabStop = true;
+            this.radioButtonFeminino.Text = "Feminino";
+            this.radioButtonFeminino.UseVisualStyleBackColor = true;
+            this.radioButtonFeminino.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
-            // radioButton2
+            // radioButtonMasculino
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.ForeColor = System.Drawing.Color.White;
-            this.radioButton2.Location = new System.Drawing.Point(123, 19);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(67, 17);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Feminino";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+            this.radioButtonMasculino.AutoSize = true;
+            this.radioButtonMasculino.ForeColor = System.Drawing.Color.White;
+            this.radioButtonMasculino.Location = new System.Drawing.Point(15, 19);
+            this.radioButtonMasculino.Name = "radioButtonMasculino";
+            this.radioButtonMasculino.Size = new System.Drawing.Size(73, 17);
+            this.radioButtonMasculino.TabIndex = 0;
+            this.radioButtonMasculino.TabStop = true;
+            this.radioButtonMasculino.Text = "Masculino";
+            this.radioButtonMasculino.UseVisualStyleBackColor = true;
             // 
             // label5
             // 
@@ -191,9 +191,11 @@
             // 
             // pictureBoxFoto
             // 
+            this.pictureBoxFoto.Image = global::GestorDeEstudantesT7EvertonGOD_VS.Properties.Resources.user;
             this.pictureBoxFoto.Location = new System.Drawing.Point(364, 57);
             this.pictureBoxFoto.Name = "pictureBoxFoto";
             this.pictureBoxFoto.Size = new System.Drawing.Size(100, 100);
+            this.pictureBoxFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxFoto.TabIndex = 19;
             this.pictureBoxFoto.TabStop = false;
             // 
@@ -220,6 +222,7 @@
             this.buttonInserirFoto.TabIndex = 22;
             this.buttonInserirFoto.Text = "Inserir";
             this.buttonInserirFoto.UseVisualStyleBackColor = true;
+            this.buttonInserirFoto.Click += new System.EventHandler(this.buttonInserirFoto_Click);
             // 
             // buttonAdicionar
             // 
@@ -230,6 +233,7 @@
             this.buttonAdicionar.TabIndex = 23;
             this.buttonAdicionar.Text = "Adicionar";
             this.buttonAdicionar.UseVisualStyleBackColor = true;
+            this.buttonAdicionar.Click += new System.EventHandler(this.buttonAdicionar_Click);
             // 
             // buttonCancelar
             // 
@@ -286,8 +290,8 @@
         private System.Windows.Forms.DateTimePicker dateTimePickerNascimento;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton radioButtonFeminino;
+        private System.Windows.Forms.RadioButton radioButtonMasculino;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
