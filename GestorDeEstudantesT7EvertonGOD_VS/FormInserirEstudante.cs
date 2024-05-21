@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -97,6 +98,22 @@ namespace GestorDeEstudantesT7EvertonGOD_VS
             if ((anoAtual - anoDeNascimento) < 10 || (anoAtual - anoDeNascimento) > 100)
             {
                 MessageBox.Show("O aluno precisa ter entre 10 e 100 anos", "Ano de nascimento inválido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (Verificar())
+            {
+                pictureBoxFoto.Image.Save(foto, pictureBoxFoto.Image.RawFormat);
+                if (estudante.inserirEstudante(nome, sobrenome, nascimento, telefone, genero, endereco, foto))
+                {
+                    MessageBox.Show("O estudante foi cadastrado com sucesso", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("O estudante não foi cadastrado!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Você não preencheu todos os campos!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
     }
