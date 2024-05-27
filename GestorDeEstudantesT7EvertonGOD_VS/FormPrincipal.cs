@@ -35,7 +35,8 @@ namespace GestorDeEstudantesT7EvertonGOD_VS
 
         private void listaDeEstudanteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            FormListarEstudante formListarEstudante = new FormListarEstudante();
+            formListarEstudante.Show(this);  
         }
 
         private void estatísticasToolStripMenuItem_Click(object sender, EventArgs e)
