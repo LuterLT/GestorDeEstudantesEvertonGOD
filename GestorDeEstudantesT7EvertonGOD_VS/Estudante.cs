@@ -14,7 +14,7 @@ namespace GestorDeEstudantesT7EvertonGOD_VS
 
         public bool inserirEstudante(string nome, string sobrenome, DateTime nascimento, string telefone, string genero, string endereco, MemoryStream foto)
         {
-            MySqlCommand comando = new MySqlCommand("INSERT INTO `estudantes`(`id`, `nome`, `sobrenome`, `nascimento`, `genero`, `telefone`, `endereco`, `foto`) VALUES (@nome,@sobrenome,@nascimento,@genero,@foto)", meuBancoDeDados.getConexao);
+            MySqlCommand comando = new MySqlCommand("INSERT INTO `estudantes`(`nome`, `sobrenome`, `nascimento`, `genero`, `telefone`, `endereco`, `foto`) VALUES (@nome,@sobrenome,@nascimento,@genero,@foto)", meuBancoDeDados.getConexao);
 
             comando.Parameters.Add("@nome", MySqlDbType.VarChar).Value = nome;
             comando.Parameters.Add("@sobrenome", MySqlDbType.VarChar).Value = sobrenome;

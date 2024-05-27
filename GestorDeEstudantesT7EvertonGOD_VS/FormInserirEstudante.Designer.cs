@@ -103,6 +103,8 @@
             // 
             // dateTimePickerNascimento
             // 
+            this.dateTimePickerNascimento.CustomFormat = "dd/MM/yyy";
+            this.dateTimePickerNascimento.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePickerNascimento.Location = new System.Drawing.Point(100, 133);
             this.dateTimePickerNascimento.Name = "dateTimePickerNascimento";
             this.dateTimePickerNascimento.Size = new System.Drawing.Size(211, 20);
@@ -138,7 +140,6 @@
             this.radioButtonFeminino.Name = "radioButtonFeminino";
             this.radioButtonFeminino.Size = new System.Drawing.Size(67, 17);
             this.radioButtonFeminino.TabIndex = 1;
-            this.radioButtonFeminino.TabStop = true;
             this.radioButtonFeminino.Text = "Feminino";
             this.radioButtonFeminino.UseVisualStyleBackColor = true;
             this.radioButtonFeminino.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
@@ -146,6 +147,7 @@
             // radioButtonMasculino
             // 
             this.radioButtonMasculino.AutoSize = true;
+            this.radioButtonMasculino.Checked = true;
             this.radioButtonMasculino.ForeColor = System.Drawing.Color.White;
             this.radioButtonMasculino.Location = new System.Drawing.Point(15, 19);
             this.radioButtonMasculino.Name = "radioButtonMasculino";
