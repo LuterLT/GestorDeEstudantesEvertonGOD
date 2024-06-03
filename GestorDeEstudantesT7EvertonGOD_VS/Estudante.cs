@@ -51,5 +51,34 @@ namespace GestorDeEstudantesT7EvertonGOD_VS
 
             return tabelaDeDados;
         }
+
+        public bool atualizarEstudante(int id, string nome, string sobrenome, DateTime nascimento, string telefone, string genero, string endereco, MemoryStream foto)
+        {
+            MySqlCommand comando = new MySqlCommand("UPDATE `estudantes` SET `nome`=@nome,`sobrenome`=@sobrenome,`nascimento`=@nascimento,`genero`=@genero,`telefone`=@telefone,`endereco`=@endereco,`foto`=@foto WHERE `id`=@id", meuBancoDeDados.getConexao);
+
+            comando.Parameters.Add("@id", MySqlDbType.Int32).Value = id;
+
+            comando.Parameters.Add("@nome", MySqlDbType.VarChar).Value = nome;
+            comando.Parameters.Add("@sobrenome", MySqlDbType.VarChar).Value = sobrenome;
+            comando.Parameters.Add("@nascimento", MySqlDbType.Date).Value = nascimento;
+            comando.Parameters.Add("@genero", MySqlDbType.VarChar).Value = genero;
+            comando.Parameters.Add("@telefone", MySqlDbType.VarChar).Value = telefone;
+            comando.Parameters.Add("@endereco", MySqlDbType.Text).Value = endereco;
+            comando.Parameters.Add("@foto", MySqlDbType.LongBlob).Value = foto.ToArray();
+
+            meuBancoDeDados.abrirConexao();
+            if (comando.ExecuteNonQuery() == 1)
+            {
+                meuBancoDeDados.fecharConexao();
+                return true;
+            }
+            else
+            {
+                meuBancoDeDados.fecharConexao();
+                return false;
+            }
+
+        }
+
     }
 }

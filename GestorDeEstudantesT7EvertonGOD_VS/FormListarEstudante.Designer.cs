@@ -35,11 +35,14 @@
             // 
             // dataGridViewListaDeAlunos
             // 
+            this.dataGridViewListaDeAlunos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewListaDeAlunos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewListaDeAlunos.Location = new System.Drawing.Point(12, 12);
             this.dataGridViewListaDeAlunos.Name = "dataGridViewListaDeAlunos";
+            this.dataGridViewListaDeAlunos.ShowEditingIcon = false;
             this.dataGridViewListaDeAlunos.Size = new System.Drawing.Size(776, 347);
             this.dataGridViewListaDeAlunos.TabIndex = 0;
+            this.dataGridViewListaDeAlunos.DoubleClick += new System.EventHandler(this.dataGridViewListaDeAlunos_DoubleClick);
             // 
             // buttonAtualizar
             // 

@@ -24,7 +24,7 @@ namespace GestorDeEstudantesT7EvertonGOD_VS
         {
             //Preenche o dataGridView com as informações dos estudantes.
 
-            MySqlCommand comando = new MySqlCommand("SELECT * FROM `estudante`");
+            MySqlCommand comando = new MySqlCommand("SELECT * FROM `estudantes`");
             dataGridViewListaDeAlunos.ReadOnly = true;
 
             //Cria uma coluna para exibir as fotos dos alunos.
@@ -43,7 +43,12 @@ namespace GestorDeEstudantesT7EvertonGOD_VS
 
         private void buttonAtualizar_Click(object sender, EventArgs e)
         {
+            //atualiza a lista de estudantes
+        }
 
+        private void dataGridViewListaDeAlunos_DoubleClick(object sender, EventArgs e)
+        {
+            //exibir as informações do estudante ao clicar nele
         }
     }
 }
