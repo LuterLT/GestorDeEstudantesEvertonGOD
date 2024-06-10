@@ -44,6 +44,7 @@ namespace GestorDeEstudantesT7EvertonGOD_VS
         private void buttonAtualizar_Click(object sender, EventArgs e)
         {
             //atualiza a lista de estudantes
+            
         }
 
         private void dataGridViewListaDeAlunos_DoubleClick(object sender, EventArgs e)
