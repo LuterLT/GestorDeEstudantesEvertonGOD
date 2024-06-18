@@ -258,6 +258,7 @@
             this.buttonSalvar.TabIndex = 37;
             this.buttonSalvar.Text = "Salvar";
             this.buttonSalvar.UseVisualStyleBackColor = false;
+            this.buttonSalvar.Click += new System.EventHandler(this.buttonSalvar_Click);
             // 
             // buttonApagar
             // 
@@ -270,6 +271,7 @@
             this.buttonApagar.TabIndex = 38;
             this.buttonApagar.Text = "Apagar";
             this.buttonApagar.UseVisualStyleBackColor = false;
+            this.buttonApagar.Click += new System.EventHandler(this.buttonApagar_Click);
             // 
             // buttonInserirFoto
             // 
@@ -319,7 +321,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.PictureBox pictureBoxFoto;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label1;
@@ -339,5 +340,6 @@
         internal System.Windows.Forms.GroupBox groupBox1;
         internal System.Windows.Forms.RadioButton radioButtonFeminino;
         internal System.Windows.Forms.RadioButton radioButtonMasculino;
+        internal System.Windows.Forms.PictureBox pictureBoxFoto;
     }
 }
