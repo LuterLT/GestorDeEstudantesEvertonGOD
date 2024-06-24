@@ -48,6 +48,9 @@
             this.buttonSalvar = new System.Windows.Forms.Button();
             this.buttonApagar = new System.Windows.Forms.Button();
             this.buttonInserirFoto = new System.Windows.Forms.Button();
+            this.buttonBuscar = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.textBoxID = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFoto)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -72,7 +75,7 @@
             // pictureBoxFoto
             // 
             this.pictureBoxFoto.Image = global::GestorDeEstudantesT7EvertonGOD_VS.Properties.Resources.user;
-            this.pictureBoxFoto.Location = new System.Drawing.Point(372, 104);
+            this.pictureBoxFoto.Location = new System.Drawing.Point(511, 104);
             this.pictureBoxFoto.Name = "pictureBoxFoto";
             this.pictureBoxFoto.Size = new System.Drawing.Size(100, 100);
             this.pictureBoxFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -158,14 +161,14 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(47, 104);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(22, 15);
+            this.label2.Size = new System.Drawing.Size(43, 15);
             this.label2.TabIndex = 23;
-            this.label2.Text = "ID";
+            this.label2.Text = "Nome";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // textBoxNome
             // 
-            this.textBoxNome.Location = new System.Drawing.Point(108, 104);
+            this.textBoxNome.Location = new System.Drawing.Point(108, 101);
             this.textBoxNome.Name = "textBoxNome";
             this.textBoxNome.Size = new System.Drawing.Size(211, 20);
             this.textBoxNome.TabIndex = 22;
@@ -176,7 +179,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("News701 BT", 8.5F, System.Drawing.FontStyle.Bold);
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(383, 218);
+            this.label7.Location = new System.Drawing.Point(522, 218);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(35, 15);
             this.label7.TabIndex = 33;
@@ -188,7 +191,7 @@
             this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.label4.Font = new System.Drawing.Font("News701 BT", 8.5F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(402, 86);
+            this.label4.Location = new System.Drawing.Point(541, 86);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(35, 15);
             this.label4.TabIndex = 34;
@@ -277,7 +280,7 @@
             // 
             this.buttonInserirFoto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.buttonInserirFoto.ForeColor = System.Drawing.Color.White;
-            this.buttonInserirFoto.Location = new System.Drawing.Point(372, 210);
+            this.buttonInserirFoto.Location = new System.Drawing.Point(511, 210);
             this.buttonInserirFoto.Name = "buttonInserirFoto";
             this.buttonInserirFoto.Size = new System.Drawing.Size(100, 38);
             this.buttonInserirFoto.TabIndex = 39;
@@ -285,12 +288,44 @@
             this.buttonInserirFoto.UseVisualStyleBackColor = false;
             this.buttonInserirFoto.Click += new System.EventHandler(this.buttonInserirFoto_Click);
             // 
+            // buttonBuscar
+            // 
+            this.buttonBuscar.Location = new System.Drawing.Point(337, 69);
+            this.buttonBuscar.Name = "buttonBuscar";
+            this.buttonBuscar.Size = new System.Drawing.Size(75, 23);
+            this.buttonBuscar.TabIndex = 40;
+            this.buttonBuscar.Text = "Buscar";
+            this.buttonBuscar.UseVisualStyleBackColor = true;
+            this.buttonBuscar.Click += new System.EventHandler(this.buttonBuscar_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.label8.Font = new System.Drawing.Font("News701 BT", 8.5F, System.Drawing.FontStyle.Bold);
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(63, 71);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(22, 15);
+            this.label8.TabIndex = 41;
+            this.label8.Text = "ID";
+            // 
+            // textBoxID
+            // 
+            this.textBoxID.Location = new System.Drawing.Point(108, 71);
+            this.textBoxID.Name = "textBoxID";
+            this.textBoxID.Size = new System.Drawing.Size(211, 20);
+            this.textBoxID.TabIndex = 43;
+            // 
             // FormAtualizarApagarEstudantes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(759, 434);
+            this.Controls.Add(this.textBoxID);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.buttonBuscar);
             this.Controls.Add(this.buttonInserirFoto);
             this.Controls.Add(this.buttonApagar);
             this.Controls.Add(this.buttonSalvar);
@@ -341,5 +376,8 @@
         internal System.Windows.Forms.RadioButton radioButtonFeminino;
         internal System.Windows.Forms.RadioButton radioButtonMasculino;
         internal System.Windows.Forms.PictureBox pictureBoxFoto;
+        private System.Windows.Forms.Button buttonBuscar;
+        private System.Windows.Forms.Label label8;
+        internal System.Windows.Forms.TextBox textBoxID;
     }
 }

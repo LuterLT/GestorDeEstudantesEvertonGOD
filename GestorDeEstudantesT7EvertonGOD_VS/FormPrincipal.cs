@@ -46,7 +46,8 @@ namespace GestorDeEstudantesT7EvertonGOD_VS
 
         private void editarRemoverToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            FormAtualizarApagarEstudantes atualizarApagarEstudantes = new FormAtualizarApagarEstudantes();
+            atualizarApagarEstudantes.Show();
         }
 
         private void gerenciarEstudantesToolStripMenuItem_Click(object sender, EventArgs e)

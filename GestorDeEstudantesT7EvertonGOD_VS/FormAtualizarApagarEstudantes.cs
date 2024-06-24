@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,6 +21,8 @@ namespace GestorDeEstudantesT7EvertonGOD_VS
         }
         //variavel seila oq
         Estudante estudante = new Estudante();
+        //variavel global d tipo MeuBancoDeDados
+        MeuBanquinhoDeDados meuBanquinhoDeDados = new MeuBanquinhoDeDados();
 
         private void FormAtualizarApagarEstudantes_Load(object sender, EventArgs e)
         {
@@ -121,8 +124,9 @@ namespace GestorDeEstudantesT7EvertonGOD_VS
 
         private void buttonApagar_Click(object sender, EventArgs e)
         {
+            
             //referencia a ID do aluno
-            int idDoAluno = Convert.ToInt32(textBoxNome.Text);
+            int idDoAluno = Convert.ToInt32(textBoxID.Text);
             //Mostrar uma caixa de dialogo perguntando se o usuario
             //tem certeza de que quer apagar o aluno
             if (MessageBox.Show("Tem certeza que deseja apagar o aluno?", "Apagar Estudante", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -130,7 +134,7 @@ namespace GestorDeEstudantesT7EvertonGOD_VS
                 if (estudante.apagarEstudante(idDoAluno))
                 {
                     MessageBox.Show("Aluno apagado!", "Apagar Estudante", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    //Lmpa as coisas de texto
+                    //Limpa as coisas de texto
                     textBoxNome.Text = "";
                     textBoxSobrenome.Text = "";
                     textBoxTelefone.Text = "";
@@ -147,7 +151,7 @@ namespace GestorDeEstudantesT7EvertonGOD_VS
             
 
             // Esta linha só existe em "buttonSalvar_Click(...)"
-            int id = Convert.ToInt32(textBoxNome.Text);
+            int id = Convert.ToInt32(textBoxID.Text);
 
             string nome = textBoxNome.Text;
             string sobrenome = textBoxSobrenome.Text;
@@ -211,6 +215,38 @@ namespace GestorDeEstudantesT7EvertonGOD_VS
             else
             {
                 return true;
+            }
+        }
+
+        private void buttonBuscar_Click(object sender, EventArgs e)
+        { 
+            //Converte o ID da caixa de texto para número inteiro
+            int id = Convert.ToInt32(textBoxID.Text);
+
+            MySqlCommand comando = new MySqlCommand("SELECT `id`, `nome`, `sobrenome`, `nascimento`, `genero`, `telefone`, `endereco`, `foto` FROM `estudantes` WHERE `id`=@id", meuBanquinhoDeDados.getConexao);
+            comando.Parameters.Add("@id", MySqlDbType.Int32).Value = id;
+            DataTable tabela = estudante.getEstudantes(comando);
+
+            if (tabela.Rows.Count > 0)
+            {
+                textBoxID.Text = tabela.Rows[0]["id"].ToString();
+                textBoxNome.Text = tabela.Rows[0]["nome"].ToString();
+                textBoxSobrenome.Text = tabela.Rows[0]["sobrenome"].ToString();
+                textBoxTelefone.Text = tabela.Rows[0]["telefone"].ToString();
+                textBoxEndereco.Text = tabela.Rows[0]["endereco"].ToString();
+                dateTimePickerNascimento.Value = (DateTime)tabela.Rows[0]["nascimento"];
+                if (tabela.Rows[0]["genero"].ToString() == "Feminino")
+                {
+                    radioButtonFeminino.Checked = true;
+                }
+                else
+                { 
+                    radioButtonMasculino.Checked = true;
+                }
+                byte[] foto = (byte[])tabela.Rows[0]["foto"];
+                MemoryStream fotoStream = new MemoryStream(foto);
+                pictureBoxFoto.Image = Image.FromStream(fotoStream);
+            
             }
         }
     }

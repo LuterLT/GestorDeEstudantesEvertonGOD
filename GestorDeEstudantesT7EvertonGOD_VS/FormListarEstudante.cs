@@ -45,7 +45,22 @@ namespace GestorDeEstudantesT7EvertonGOD_VS
         private void buttonAtualizar_Click(object sender, EventArgs e)
         {
             //atualiza a lista de estudantes
-            
+            //Preenche o dataGridView com as informações dos estudantes.
+
+            MySqlCommand comando = new MySqlCommand("SELECT * FROM `estudantes`");
+            dataGridViewListaDeAlunos.ReadOnly = true;
+
+            //Cria uma coluna para exibir as fotos dos alunos.
+            DataGridViewImageColumn colunaDeFotos = new DataGridViewImageColumn();
+            //Determina uma altura padrão para as linhas da tabelas
+            dataGridViewListaDeAlunos.RowTemplate.Height = 80;
+            //Determina a origem da tabela
+            dataGridViewListaDeAlunos.DataSource = estudante.getEstudantes(comando);
+            //Determinar qual será a coluna com as imagens
+            colunaDeFotos = (DataGridViewImageColumn)dataGridViewListaDeAlunos.Columns[7];
+            colunaDeFotos.ImageLayout = DataGridViewImageCellLayout.Stretch;
+            //Impede o usuário de incluir linhas
+            dataGridViewListaDeAlunos.AllowUserToAddRows = false;
         }
 
         private void dataGridViewListaDeAlunos_DoubleClick(object sender, EventArgs e)
@@ -54,7 +69,7 @@ namespace GestorDeEstudantesT7EvertonGOD_VS
             FormAtualizarApagarEstudantes formAtualizarApagarEstudante =
                 new FormAtualizarApagarEstudantes();
 
-            formAtualizarApagarEstudante.textBoxNome.Text =
+            formAtualizarApagarEstudante.textBoxID.Text =
                 dataGridViewListaDeAlunos.CurrentRow.Cells[0].Value.ToString();
             formAtualizarApagarEstudante.textBoxNome.Text =
                 dataGridViewListaDeAlunos.CurrentRow.Cells[1].Value.ToString();
