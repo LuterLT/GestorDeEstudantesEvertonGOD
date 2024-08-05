@@ -219,34 +219,55 @@ namespace GestorDeEstudantesT7EvertonGOD_VS
         }
 
         private void buttonBuscar_Click(object sender, EventArgs e)
-        { 
-            //Converte o ID da caixa de texto para número inteiro
-            int id = Convert.ToInt32(textBoxID.Text);
-
-            MySqlCommand comando = new MySqlCommand("SELECT `id`, `nome`, `sobrenome`, `nascimento`, `genero`, `telefone`, `endereco`, `foto` FROM `estudantes` WHERE `id`=@id", meuBanquinhoDeDados.getConexao);
-            comando.Parameters.Add("@id", MySqlDbType.Int32).Value = id;
-            DataTable tabela = estudante.getEstudantes(comando);
-
-            if (tabela.Rows.Count > 0)
+        {
+            try
             {
-                textBoxID.Text = tabela.Rows[0]["id"].ToString();
-                textBoxNome.Text = tabela.Rows[0]["nome"].ToString();
-                textBoxSobrenome.Text = tabela.Rows[0]["sobrenome"].ToString();
-                textBoxTelefone.Text = tabela.Rows[0]["telefone"].ToString();
-                textBoxEndereco.Text = tabela.Rows[0]["endereco"].ToString();
-                dateTimePickerNascimento.Value = (DateTime)tabela.Rows[0]["nascimento"];
-                if (tabela.Rows[0]["genero"].ToString() == "Feminino")
+                //Converte o ID da caixa de texto para número inteiro
+                int id = Convert.ToInt32(textBoxID.Text);
+
+                MySqlCommand comando = new MySqlCommand("SELECT `id`, `nome`, `sobrenome`, `nascimento`, `genero`, `telefone`, `endereco`, `foto` FROM `estudantes` WHERE `id`=@id", meuBanquinhoDeDados.getConexao);
+                comando.Parameters.Add("@id", MySqlDbType.Int32).Value = id;
+                DataTable tabela = estudante.getEstudantes(comando);
+
+                if (tabela.Rows.Count > 0)
                 {
-                    radioButtonFeminino.Checked = true;
+                    textBoxID.Text = tabela.Rows[0]["id"].ToString();
+                    textBoxNome.Text = tabela.Rows[0]["nome"].ToString();
+                    textBoxSobrenome.Text = tabela.Rows[0]["sobrenome"].ToString();
+                    textBoxTelefone.Text = tabela.Rows[0]["telefone"].ToString();
+                    textBoxEndereco.Text = tabela.Rows[0]["endereco"].ToString();
+                    dateTimePickerNascimento.Value = (DateTime)tabela.Rows[0]["nascimento"];
+                    if (tabela.Rows[0]["genero"].ToString() == "Feminino")
+                    {
+                        radioButtonFeminino.Checked = true;
+                    }
+                    else
+                    {
+                        radioButtonMasculino.Checked = true;
+                    }
+                    byte[] foto = (byte[])tabela.Rows[0]["foto"];
+                    MemoryStream fotoStream = new MemoryStream(foto);
+                    pictureBoxFoto.Image = Image.FromStream(fotoStream);
+
                 }
-                else
-                { 
-                    radioButtonMasculino.Checked = true;
-                }
-                byte[] foto = (byte[])tabela.Rows[0]["foto"];
-                MemoryStream fotoStream = new MemoryStream(foto);
-                pictureBoxFoto.Image = Image.FromStream(fotoStream);
-            
+
+            } catch
+            {
+                MessageBox.Show("Digite uma ID válida!", "ID Inválido", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+            }
+        }
+
+        private void textBoxID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxID_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //impede que o usuário digite letras
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            { 
+                e.Handled = true;
             }
         }
     }
