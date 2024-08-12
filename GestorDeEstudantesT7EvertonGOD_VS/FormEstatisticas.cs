@@ -41,6 +41,20 @@ namespace GestorDeEstudantesT7EvertonGOD_VS
             corPainelTotal = panelTotalEstudantes.BackColor;
             corPainelMeninos = panelMeninos.BackColor;
             corPainelMeninas = panelMeninas.BackColor;
+
+            //exibe os valores(total geral, total meninas, total meninos)
+            Estudante estudante = new Estudante();
+            double totalEstudantes = Convert.ToDouble(estudante.totalDeEstudantes());
+            double totalMeninos = Convert.ToDouble(estudante.totalDeEstudantesMeninos());
+            double totalMeninas = Convert.ToDouble(estudante.totalDeEstudantesMeninas());
+
+            //contar a porcentagem (%)
+            double porcentagemDeMeninos = (totalMeninos * 100) / totalEstudantes;
+            double porcentagemDeMeninas = (totalMeninas * 100) / totalEstudantes;
+
+            labelTotalEstudantes.Text = "Total de Estudantes: " + totalEstudantes.ToString();
+            labelMeninos.Text = "Meninos: " + porcentagemDeMeninos.ToString("0.00") + "%";
+            labelMeninas.Text = "Meninas: " + porcentagemDeMeninas.ToString("0.00") + "%";
         }
 
         private void panelTotalEstudantes_Paint(object sender, PaintEventArgs e)

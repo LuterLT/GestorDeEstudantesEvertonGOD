@@ -81,7 +81,7 @@
             this.labelMeninas.AutoSize = true;
             this.labelMeninas.Font = new System.Drawing.Font("News706 BT", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelMeninas.ForeColor = System.Drawing.Color.White;
-            this.labelMeninas.Location = new System.Drawing.Point(71, 76);
+            this.labelMeninas.Location = new System.Drawing.Point(66, 76);
             this.labelMeninas.Name = "labelMeninas";
             this.labelMeninas.Size = new System.Drawing.Size(153, 25);
             this.labelMeninas.TabIndex = 2;
@@ -132,7 +132,8 @@
             this.Controls.Add(this.panelMeninas);
             this.Controls.Add(this.panelTotalEstudantes);
             this.Name = "FormEstatisticas";
-            this.Text = "FormEstatisticas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Estatisticas dos Alunos";
             this.Load += new System.EventHandler(this.FormEstatisticas_Load);
             this.panelTotalEstudantes.ResumeLayout(false);
             this.panelTotalEstudantes.PerformLayout();
