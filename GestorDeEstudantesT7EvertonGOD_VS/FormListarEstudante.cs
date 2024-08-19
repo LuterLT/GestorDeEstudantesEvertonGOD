@@ -105,5 +105,10 @@ namespace GestorDeEstudantesT7EvertonGOD_VS
 
             formAtualizarApagarEstudante.Show();
         }
+
+        private void dataGridViewListaDeAlunos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
