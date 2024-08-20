@@ -103,6 +103,7 @@
             this.buttonInserirFoto.TabIndex = 61;
             this.buttonInserirFoto.Text = "Inserir Foto";
             this.buttonInserirFoto.UseVisualStyleBackColor = false;
+            this.buttonInserirFoto.Click += new System.EventHandler(this.buttonInserirFoto_Click);
             // 
             // buttonApagar
             // 
@@ -307,6 +308,7 @@
             this.buttonBaixarFoto.TabIndex = 65;
             this.buttonBaixarFoto.Text = "Baixar Foto";
             this.buttonBaixarFoto.UseVisualStyleBackColor = false;
+            this.buttonBaixarFoto.Click += new System.EventHandler(this.buttonBaixarFoto_Click);
             // 
             // dataGridViewListaDeAlunos
             // 
@@ -344,6 +346,7 @@
             this.buttonBuscarDado.TabIndex = 69;
             this.buttonBuscarDado.Text = "Buscar";
             this.buttonBuscarDado.UseVisualStyleBackColor = true;
+            this.buttonBuscarDado.Click += new System.EventHandler(this.buttonBuscarDado_Click);
             // 
             // label7
             // 

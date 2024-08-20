@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -89,6 +90,44 @@ namespace GestorDeEstudantesT7EvertonGOD_VS
             radioButtonFeminino.Checked = true;
             dateTimePickerNascimento.Value = DateTime.Now;
             pictureBoxFoto.Image = null;
+        }
+
+        private void buttonInserirFoto_Click(object sender, EventArgs e)
+        {
+            //abre janela para pesquisar a imagem no computador.
+            OpenFileDialog procurarFoto = new OpenFileDialog();
+
+            procurarFoto.Filter = "Selecione a foto (*.jpg;*.png;*.jpeg;*.gif)|*.jpg;*.png;*.jpeg;*.gif";
+
+            if (procurarFoto.ShowDialog() == DialogResult.OK)
+            {
+                pictureBoxFoto.Image = Image.FromFile(procurarFoto.FileName);
+            }
+        }
+
+        private void buttonBaixarFoto_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog salvarArquivo = new SaveFileDialog();
+            //define o nome do arquivo que será salvo
+            salvarArquivo.FileName = "Estudante_" + textBoxID.Text;
+
+            //Verificar se tem imagem na caixa de imagem
+            if (pictureBoxFoto.Image == null)
+            {
+                MessageBox.Show("Não tem foto para baixar");
+            }
+            else
+            {
+                salvarArquivo.ShowDialog();
+                pictureBoxFoto.Image.Save(salvarArquivo.FileName + ("." + ImageFormat.Jpeg.ToString()));
+            }
+        }
+
+        private void buttonBuscarDado_Click(object sender, EventArgs e)
+        {
+            string pesquisa = "SELECT * FROM `estudantes` WHERE CONCAT(`nome`,`sobrenome`,`endereco`) LIKE'%"+textBoxBuscarDado.Text+"%'";
+            MySqlCommand comando = new MySqlCommand(pesquisa);
+            preencheTabela(comando);
         }
     }
 }
