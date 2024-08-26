@@ -59,7 +59,8 @@ namespace GestorDeEstudantesT7EvertonGOD_VS
 
         private void imprimirToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            FormImprimirAlunos formImprimirAlunos = new FormImprimirAlunos();
+            formImprimirAlunos.Show(this);
         }
     }
 }

@@ -116,6 +116,7 @@
             this.buttonApagar.TabIndex = 60;
             this.buttonApagar.Text = "Apagar";
             this.buttonApagar.UseVisualStyleBackColor = false;
+            this.buttonApagar.Click += new System.EventHandler(this.buttonApagar_Click);
             // 
             // buttonSalvar
             // 
@@ -128,6 +129,7 @@
             this.buttonSalvar.TabIndex = 59;
             this.buttonSalvar.Text = "Salvar";
             this.buttonSalvar.UseVisualStyleBackColor = false;
+            this.buttonSalvar.Click += new System.EventHandler(this.buttonSalvar_Click);
             // 
             // groupBox1
             // 
@@ -330,6 +332,7 @@
             this.buttonAtualizar.TabIndex = 67;
             this.buttonAtualizar.Text = "Atualizar";
             this.buttonAtualizar.UseVisualStyleBackColor = true;
+            this.buttonAtualizar.Click += new System.EventHandler(this.buttonAtualizar_Click);
             // 
             // textBoxBuscarDado
             // 
@@ -371,6 +374,7 @@
             this.buttonIncluir.TabIndex = 71;
             this.buttonIncluir.Text = "Incluir";
             this.buttonIncluir.UseVisualStyleBackColor = false;
+            this.buttonIncluir.Click += new System.EventHandler(this.buttonIncluir_Click);
             // 
             // buttonRedefinir
             // 
