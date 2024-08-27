@@ -31,18 +31,18 @@
             this.dataGridViewListaDeAlunos = new System.Windows.Forms.DataGridView();
             this.buttonBaixarDocumento = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radioButtonMasculino = new System.Windows.Forms.RadioButton();
-            this.radioButtonFemino = new System.Windows.Forms.RadioButton();
-            this.radioButtonTodos = new System.Windows.Forms.RadioButton();
-            this.groupBoxIntervaloDatas = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.radioButtonSim = new System.Windows.Forms.RadioButton();
-            this.radioButtonNao = new System.Windows.Forms.RadioButton();
-            this.label2 = new System.Windows.Forms.Label();
-            this.dateTimePickerInicial = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePickerFinal = new System.Windows.Forms.DateTimePicker();
-            this.label3 = new System.Windows.Forms.Label();
             this.buttonFiltrarDados = new System.Windows.Forms.Button();
+            this.groupBoxIntervaloDatas = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.dateTimePickerFinal = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerInicial = new System.Windows.Forms.DateTimePicker();
+            this.label2 = new System.Windows.Forms.Label();
+            this.radioButtonNao = new System.Windows.Forms.RadioButton();
+            this.radioButtonSim = new System.Windows.Forms.RadioButton();
+            this.label1 = new System.Windows.Forms.Label();
+            this.radioButtonTodos = new System.Windows.Forms.RadioButton();
+            this.radioButtonFemino = new System.Windows.Forms.RadioButton();
+            this.radioButtonMasculino = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListaDeAlunos)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBoxIntervaloDatas.SuspendLayout();
@@ -83,41 +83,17 @@
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             // 
-            // radioButtonMasculino
+            // buttonFiltrarDados
             // 
-            this.radioButtonMasculino.AutoSize = true;
-            this.radioButtonMasculino.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButtonMasculino.Location = new System.Drawing.Point(192, 50);
-            this.radioButtonMasculino.Name = "radioButtonMasculino";
-            this.radioButtonMasculino.Size = new System.Drawing.Size(91, 19);
-            this.radioButtonMasculino.TabIndex = 0;
-            this.radioButtonMasculino.TabStop = true;
-            this.radioButtonMasculino.Text = "Masculino";
-            this.radioButtonMasculino.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonFemino
-            // 
-            this.radioButtonFemino.AutoSize = true;
-            this.radioButtonFemino.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButtonFemino.Location = new System.Drawing.Point(101, 50);
-            this.radioButtonFemino.Name = "radioButtonFemino";
-            this.radioButtonFemino.Size = new System.Drawing.Size(85, 19);
-            this.radioButtonFemino.TabIndex = 1;
-            this.radioButtonFemino.TabStop = true;
-            this.radioButtonFemino.Text = "Feminino";
-            this.radioButtonFemino.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonTodos
-            // 
-            this.radioButtonTodos.AutoSize = true;
-            this.radioButtonTodos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButtonTodos.Location = new System.Drawing.Point(23, 50);
-            this.radioButtonTodos.Name = "radioButtonTodos";
-            this.radioButtonTodos.Size = new System.Drawing.Size(64, 19);
-            this.radioButtonTodos.TabIndex = 2;
-            this.radioButtonTodos.TabStop = true;
-            this.radioButtonTodos.Text = "Todos";
-            this.radioButtonTodos.UseVisualStyleBackColor = true;
+            this.buttonFiltrarDados.BackColor = System.Drawing.Color.Indigo;
+            this.buttonFiltrarDados.Font = new System.Drawing.Font("MS Reference Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonFiltrarDados.Location = new System.Drawing.Point(657, 26);
+            this.buttonFiltrarDados.Name = "buttonFiltrarDados";
+            this.buttonFiltrarDados.Size = new System.Drawing.Size(137, 57);
+            this.buttonFiltrarDados.TabIndex = 4;
+            this.buttonFiltrarDados.Text = "Filtrar Dados";
+            this.buttonFiltrarDados.UseVisualStyleBackColor = false;
+            this.buttonFiltrarDados.Click += new System.EventHandler(this.buttonFiltrarDados_Click);
             // 
             // groupBoxIntervaloDatas
             // 
@@ -134,27 +110,42 @@
             this.groupBoxIntervaloDatas.TabIndex = 3;
             this.groupBoxIntervaloDatas.TabStop = false;
             // 
-            // label1
+            // label3
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(6, 16);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(143, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Usar intervalo de datas:";
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(199, 57);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(14, 13);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "e";
             // 
-            // radioButtonSim
+            // dateTimePickerFinal
             // 
-            this.radioButtonSim.AutoSize = true;
-            this.radioButtonSim.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButtonSim.Location = new System.Drawing.Point(172, 14);
-            this.radioButtonSim.Name = "radioButtonSim";
-            this.radioButtonSim.Size = new System.Drawing.Size(47, 19);
-            this.radioButtonSim.TabIndex = 3;
-            this.radioButtonSim.Text = "Sim";
-            this.radioButtonSim.UseVisualStyleBackColor = true;
-            this.radioButtonSim.CheckedChanged += new System.EventHandler(this.radioButtonSim_CheckedChanged);
+            this.dateTimePickerFinal.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePickerFinal.Location = new System.Drawing.Point(228, 51);
+            this.dateTimePickerFinal.Name = "dateTimePickerFinal";
+            this.dateTimePickerFinal.Size = new System.Drawing.Size(79, 20);
+            this.dateTimePickerFinal.TabIndex = 7;
+            // 
+            // dateTimePickerInicial
+            // 
+            this.dateTimePickerInicial.CustomFormat = "";
+            this.dateTimePickerInicial.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePickerInicial.Location = new System.Drawing.Point(103, 51);
+            this.dateTimePickerInicial.Name = "dateTimePickerInicial";
+            this.dateTimePickerInicial.Size = new System.Drawing.Size(79, 20);
+            this.dateTimePickerInicial.TabIndex = 6;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(6, 56);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(96, 13);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Nascidos entre:";
             // 
             // radioButtonNao
             // 
@@ -170,53 +161,63 @@
             this.radioButtonNao.UseVisualStyleBackColor = true;
             this.radioButtonNao.CheckedChanged += new System.EventHandler(this.radioButtonNao_CheckedChanged);
             // 
-            // label2
+            // radioButtonSim
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(6, 56);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(96, 13);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Nascidos entre:";
+            this.radioButtonSim.AutoSize = true;
+            this.radioButtonSim.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButtonSim.Location = new System.Drawing.Point(172, 14);
+            this.radioButtonSim.Name = "radioButtonSim";
+            this.radioButtonSim.Size = new System.Drawing.Size(47, 19);
+            this.radioButtonSim.TabIndex = 3;
+            this.radioButtonSim.Text = "Sim";
+            this.radioButtonSim.UseVisualStyleBackColor = true;
+            this.radioButtonSim.CheckedChanged += new System.EventHandler(this.radioButtonSim_CheckedChanged);
             // 
-            // dateTimePickerInicial
+            // label1
             // 
-            this.dateTimePickerInicial.CustomFormat = "";
-            this.dateTimePickerInicial.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePickerInicial.Location = new System.Drawing.Point(103, 51);
-            this.dateTimePickerInicial.Name = "dateTimePickerInicial";
-            this.dateTimePickerInicial.Size = new System.Drawing.Size(79, 20);
-            this.dateTimePickerInicial.TabIndex = 6;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(6, 16);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(143, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Usar intervalo de datas:";
             // 
-            // dateTimePickerFinal
+            // radioButtonTodos
             // 
-            this.dateTimePickerFinal.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePickerFinal.Location = new System.Drawing.Point(228, 51);
-            this.dateTimePickerFinal.Name = "dateTimePickerFinal";
-            this.dateTimePickerFinal.Size = new System.Drawing.Size(79, 20);
-            this.dateTimePickerFinal.TabIndex = 7;
+            this.radioButtonTodos.AutoSize = true;
+            this.radioButtonTodos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButtonTodos.Location = new System.Drawing.Point(23, 50);
+            this.radioButtonTodos.Name = "radioButtonTodos";
+            this.radioButtonTodos.Size = new System.Drawing.Size(64, 19);
+            this.radioButtonTodos.TabIndex = 2;
+            this.radioButtonTodos.TabStop = true;
+            this.radioButtonTodos.Text = "Todos";
+            this.radioButtonTodos.UseVisualStyleBackColor = true;
             // 
-            // label3
+            // radioButtonFemino
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(199, 57);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(14, 13);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "e";
+            this.radioButtonFemino.AutoSize = true;
+            this.radioButtonFemino.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButtonFemino.Location = new System.Drawing.Point(101, 50);
+            this.radioButtonFemino.Name = "radioButtonFemino";
+            this.radioButtonFemino.Size = new System.Drawing.Size(85, 19);
+            this.radioButtonFemino.TabIndex = 1;
+            this.radioButtonFemino.TabStop = true;
+            this.radioButtonFemino.Text = "Feminino";
+            this.radioButtonFemino.UseVisualStyleBackColor = true;
             // 
-            // buttonFiltrarDados
+            // radioButtonMasculino
             // 
-            this.buttonFiltrarDados.BackColor = System.Drawing.Color.Indigo;
-            this.buttonFiltrarDados.Font = new System.Drawing.Font("MS Reference Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonFiltrarDados.Location = new System.Drawing.Point(657, 26);
-            this.buttonFiltrarDados.Name = "buttonFiltrarDados";
-            this.buttonFiltrarDados.Size = new System.Drawing.Size(137, 57);
-            this.buttonFiltrarDados.TabIndex = 4;
-            this.buttonFiltrarDados.Text = "Filtrar Dados";
-            this.buttonFiltrarDados.UseVisualStyleBackColor = false;
+            this.radioButtonMasculino.AutoSize = true;
+            this.radioButtonMasculino.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButtonMasculino.Location = new System.Drawing.Point(192, 50);
+            this.radioButtonMasculino.Name = "radioButtonMasculino";
+            this.radioButtonMasculino.Size = new System.Drawing.Size(91, 19);
+            this.radioButtonMasculino.TabIndex = 0;
+            this.radioButtonMasculino.TabStop = true;
+            this.radioButtonMasculino.Text = "Masculino";
+            this.radioButtonMasculino.UseVisualStyleBackColor = true;
             // 
             // FormImprimirAlunos
             // 

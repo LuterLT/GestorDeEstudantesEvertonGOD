@@ -321,6 +321,7 @@
             this.dataGridViewListaDeAlunos.ShowEditingIcon = false;
             this.dataGridViewListaDeAlunos.Size = new System.Drawing.Size(479, 331);
             this.dataGridViewListaDeAlunos.TabIndex = 66;
+            this.dataGridViewListaDeAlunos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewListaDeAlunos_CellContentClick);
             this.dataGridViewListaDeAlunos.Click += new System.EventHandler(this.dataGridViewListaDeAlunos_Click);
             // 
             // buttonAtualizar

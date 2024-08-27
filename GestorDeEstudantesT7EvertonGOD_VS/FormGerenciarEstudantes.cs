@@ -253,5 +253,10 @@ namespace GestorDeEstudantesT7EvertonGOD_VS
 
 
         }
+
+        private void dataGridViewListaDeAlunos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
