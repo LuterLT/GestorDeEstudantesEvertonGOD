@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -114,6 +115,57 @@ namespace GestorDeEstudantesT7EvertonGOD_VS
                 {
                     busca = "SELECT * FROM `estudantes`";
                 }
+                comando = new MySqlCommand(busca);
+                preencheTabela(comando);
+            }
+        }
+
+        private void buttonBaixarDocumento_Click(object sender, EventArgs e)
+        {
+            //salva o arquivo em arquivo de texto
+            // por padrão vai salvar na área de trbalho
+            string caminho = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + @"\lista_de_estudantes.txt";
+
+            //usamos isso somente ao salvar em arquivo de texto
+            using (var escritor = new StreamWriter(caminho))
+            { 
+                //verificar se o arquivo de texto já existe
+                if (!File.Exists(caminho))
+                {
+                    File.Create(caminho);
+                }
+
+                DateTime dataDeNascimento;
+
+                //percorre as linhas
+                for (int i = 0;i < dataGridViewListaDeAlunos.Rows.Count; i++) 
+                {
+                    //percorre as colunas
+                    for (int j = 0; j < dataGridViewListaDeAlunos.Columns.Count - 1; j++) 
+                    {
+                        if (j == 3)
+                        {
+                            dataDeNascimento = Convert.ToDateTime(dataGridViewListaDeAlunos.Rows[i].Cells[j].Value.ToString());
+
+
+                            escritor.Write("\t" + dataDeNascimento.ToString("dd-MM-yyyy") + "\t" + "|");
+                        }
+                        else if ( j == dataGridViewListaDeAlunos.Columns.Count - 2)
+                        {
+                            escritor.Write("\t" + dataGridViewListaDeAlunos.Rows[i].Cells[j].Value.ToString() + "\t");
+                        }
+                        else
+                        {
+                            escritor.Write("\t" + dataGridViewListaDeAlunos.Rows[i].Cells[j].Value.ToString() + "\t" + "|");
+                        }
+                       
+                    }
+                    escritor.WriteLine();
+                    escritor.WriteLine("--------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                }
+
+                escritor.Close();
+                MessageBox.Show("Dados Salvos!");
             }
         }
     }

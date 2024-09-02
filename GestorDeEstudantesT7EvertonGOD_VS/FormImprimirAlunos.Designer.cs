@@ -68,6 +68,7 @@
             this.buttonBaixarDocumento.TabIndex = 2;
             this.buttonBaixarDocumento.Text = "Baixar Documento";
             this.buttonBaixarDocumento.UseVisualStyleBackColor = true;
+            this.buttonBaixarDocumento.Click += new System.EventHandler(this.buttonBaixarDocumento_Click);
             // 
             // groupBox1
             // 
